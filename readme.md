@@ -6,7 +6,7 @@ Instructor: Bill Weinman
 =========================
 
 ## Introduction
----------------
+
 Python is a modern, object-oriented scripting language. It was developed in late 1980s by Dutch researcher Guido van Rossum, who is referred to as "BDFL: Benevolent Dictator For Life" by python developer community. 
 
 One key note: Python uses whitespace and indentation to seperate blocks of code. In other languages, curly braces are used to seperate blocks of codes. However, in python it is done through indentation. So, same block should have the same indentation.
@@ -14,7 +14,7 @@ One key note: Python uses whitespace and indentation to seperate blocks of code.
 Anther key note: Blocks do not specify scope in python. However, functions, objects, and modules define scopes.
 
 ## Core Philosophies
---------------------
+
 	* Beautiful is better than ugly
 	* Explicit is better than implicit
 	* Simple is better than complex
@@ -22,7 +22,7 @@ Anther key note: Blocks do not specify scope in python. However, functions, obje
 	* Readability counts
 
 ## Statement vs Expression
---------------------------
+
 Statement is a unit of execution. In python statement, statement is line of code.
 Experssion is a unit of evaluation. 
 	Example:		
@@ -35,21 +35,20 @@ Experssion is a unit of evaluation.
           ```
 
 ## Loops
--------------
+
 There are two basic types of loops in python:
 	while loop:		tests a conditional expression and the body of the loop is executed as long the conditional expression remains true.
-
 	For loop:		it iterates over a sequence. The body of the loop is executed for each element of the sequence.
 
 ### Additional Controls for Loops
-----------------------------------
+
 There are three additional controls for a loop:
 	continue:		shortcut a loop and restart a loop from next step
 	break:			break out of a loop
 	else:			executes only loop ends normally
 
 ## Functions
-------------
+
 Function definitions start with the keyword 'def' followed by the name of the function, which is followed by a set of parenthesis that includes all the paramters. In the following line, indent the code and start putting in the code block.
 
 To call a function, just type the name of the function and put in the arguments inside the parenthesis.
@@ -71,7 +70,7 @@ Other types of arguments can include:
 	2. Keyword arguments: These type of arguments uses 'dictionary' instead of tuples/lists. To receive this arguments keyword list, we need to type '**kwargs' in the function declaration.
 
 ## Decorator Function
----------------------
+
 In Python everything is an object, including the functions. So, we can pass around functions into another function. This is used in Decorators. Decorator function is a feature of Python that lets the developer add features to an already developed function. 
 
 In a Decorator function, there are at least two functions:
@@ -80,7 +79,7 @@ In a Decorator function, there are at least two functions:
 	2. Core function: This is the function that is actually passed to the wrapper function and that got its functionality enhanced. After implementing the Decorator, this function can't be called on stand-alone basis anymore. Rather, everytime it is called the wrapper function is called, which in turn calls this core function from within.
 
 ## Class and Object
--------------------
+
 Class is a definition and object is the instance of class. 
 
 While creating methods for the class, the first argument in each of the method should be self. This is to access the object itself from within the method.
@@ -120,7 +119,7 @@ Then in the constructor of the derived class, we need to invoke the base class c
 	super().__init__(**kwargs)
 
 Data Types
-----------
+
 In python all types are classes. If we use the 'type' function to print out the type of the data, we would see something like this:
 	<class 'int'>
 
@@ -134,7 +133,7 @@ There are different type of data, including:
 	* 'bool' for boolean
 
 String
---------------
+
 String in python can be surrounded by single quote or double quote. Both carry the same meaning. If you want to write multiple line string, you can use three single quotes at the begining and three single quotes at the end of the string, like this:
 	x = """ This is the first line
 	This is the second line
@@ -150,7 +149,7 @@ String class has some built-in methods:
 			In this string, the first placeholder {1:<9} inserts the first paramter '8' then left aligns it and makes the width of the field 9. In the second placeholder, {0:>9}, the second parameter '9' was inserted and have a width of 9.
 
 Numeric Types
----------------
+
 There are two basic numeric types in python, int and float. Numberics types are automatically casted (promoted or narrowed) based on the results.
 
 While working with the floating point number type, the python interpreter may sacrifice accuracy for precision. This also has to do with the way computer keeps track of floating-point numbers. So, if we do this:
@@ -165,14 +164,14 @@ Then we can do this:
 and we will get '0' as answer. Also, if you check the type of the variable, you will get 'decimal.Decimal'
 
 Boolean type
--------------
+
 Bool type is for logical tests. Boolean variable can be either True or False. There are certain things that are considered as False in python:
 	* None Type
 	* number zero
 	* empty string
 
 Sequence/Data Structure
------------------------
+
 Python provides some sequence types, including:
 	* Lists: mutable/changeable, assigned using []
 	* Tuples: immutable/non-changeable, assigned using ()
@@ -187,7 +186,7 @@ Python provides some sequence types, including:
 			animalsAlt = dict(kitten='meow', puppy='ruff', lion='grrr', giraffe='I am giraffe', dragon='rawr')
 
 Conditional Statement
----------------------
+
 Python uses if..elif..else statements. This works just like any other if..else statements. The syntax of if statement looks like:
 	if True:
 		print('True')
@@ -199,7 +198,7 @@ Python uses if..elif..else statements. This works just like any other if..else s
 However, there is no 'switch..case' statement in python.
 
 Comparison Operators
---------------------
+
 Python has the following operators:
 	==		equal
 	!=		not equal
@@ -209,27 +208,27 @@ Python has the following operators:
 	>=		greather than or equal
 
 Logical Operators
-------------------
+
 	and 	and operator
 	or 		or operator
 	not 	not operator
 
 Identity Operator
------------------
+
 	is  	true if same object
 	is not 	true if not same object
 
 Membership Operator
--------------------
+
 	in 		True if 'left' is a member of 'y'
 	not in 	True if 'left' is not a member of 'y'
 
 Ternary Opertor
----------------
+
 	x = [true_statement] if [condition] else [false_statement]
 
 Arithmatic Operators
---------------------
+
 	+ 		addition
 	- 		subtraction
 	* 		multiplication
@@ -241,7 +240,7 @@ Arithmatic Operators
 	+		unary positive
 	
 Bitwise Operator
-----------------
+
 	&		bitwise and
 	| 		bitwise or
 	^ 		bitwise Xor
@@ -249,7 +248,7 @@ Bitwise Operator
 	>>		shift right
 
 Operator Precedence
--------------------
+
 Higher to lower precedence:
 	** 				Exponent
 	+x, -x 			Positive, Negative
@@ -270,7 +269,7 @@ Higher to lower precedence:
 REFERENCE: https://docs.python.org/3/reference/expressions.html#operator-precedence
 
 Error Handling
---------------
+
 When ever we are running a program, we may face different types of errors. Our programs may stop working because of some errors. To keep continue running the program, we can handle the error with try...except block, like this:
 	try:
 		x = 5 / 0
@@ -289,7 +288,7 @@ In the try block, we put in the piece(s) of code that we think may generate an e
 Then we get some additional information about any error, like: sys.exc_info().
 
 File I/O
---------
+
 Python can be used to read from and write to files. For this we need to first 'open' the file, like this:
 	f = open('lines.txt')
 This function also takes a second argument, which would be either 'r' for read, 'w' for write, or 'a' for append. There is an optional '+' sign after these letters, which enable both read and write for the file. There is also an optional 't' for text files or 'b' for binary files.
