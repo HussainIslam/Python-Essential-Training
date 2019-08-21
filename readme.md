@@ -197,132 +197,152 @@ Python provides some sequence types, including:
 ## Conditional Statement
 
 Python uses ```if..elif..else``` statements. This works just like any other if..else statements. The syntax of if statement looks like:
-	if True:
-		print('True')
-	elif False:
-		print('False')
-	else:
-		print('neither True or false')
+```python
+if True:
+  print('True')
+elif False:
+  print('False')
+else:
+  print('neither True or false')
+```
+However, there is no ```switch..case``` statement in python.
 
-However, there is no 'switch..case' statement in python.
-
-Comparison Operators
+## Comparison Operators
 
 Python has the following operators:
-	==		equal
-	!=		not equal
-	<		less than
-	>		more than
-	<=		less than or equal
-	>=		greather than or equal
-
+```
+==		equal
+!=		not equal
+<		less than
+>		more than
+<=		less than or equal
+>=		greather than or equal
+```
 Logical Operators
-
-	and 	and operator
-	or 		or operator
-	not 	not operator
-
+```
+and 	and operator
+or 		or operator
+not 	not operator
+```
 Identity Operator
-
-	is  	true if same object
-	is not 	true if not same object
-
+```
+is     	true if same object
+is not 	true if not same object
+```
 Membership Operator
-
-	in 		True if 'left' is a member of 'y'
-	not in 	True if 'left' is not a member of 'y'
-
+```
+in      True if 'left' is a member of 'y'
+not in  True if 'left' is not a member of 'y'
+```
 Ternary Opertor
-
-	x = [true_statement] if [condition] else [false_statement]
-
+```python
+x = [true_statement] if [condition] else [false_statement]
+```
 Arithmatic Operators
-
-	+ 		addition
-	- 		subtraction
-	* 		multiplication
-	/		division
-	//		integer division
-	% 		modulo
-	**		exponent
-	-		unary negative
-	+		unary positive
-	
+```
++ 		addition
+- 		subtraction
+* 		multiplication
+/		division
+//		integer division
+% 		modulo
+**		exponent
+-		unary negative
++		unary positive
+```
 Bitwise Operator
-
-	&		bitwise and
-	| 		bitwise or
-	^ 		bitwise Xor
-	<<		shift left
-	>>		shift right
-
-Operator Precedence
+```
+&		bitwise and
+| 		bitwise or
+^ 		bitwise Xor
+<<		shift left
+>>		shift right
+```
+## Operator Precedence
 
 Higher to lower precedence:
-	** 				Exponent
-	+x, -x 			Positive, Negative
-	*, /, //, %		Multiplication, division, remainder
-	+, -			Addition, subtraction
-	<<, >> 			Bitwise shifts
-	& 				Bitwise AND
-	^ 				Bitwise XOR
-	| 				Bitwise OR
-	in, not in,
-	is, is not, 
-	<, <=,
-	>, >=,
-	!=, == 			Comparisons, membership test, identity test
-	not x 			Boolean NOT
-	and 			Boolean AND
-	or 				Boolean OR
-REFERENCE: https://docs.python.org/3/reference/expressions.html#operator-precedence
+```
+** 				Exponent
++x, -x 			Positive, Negative
+*, /, //, %		Multiplication, division, remainder
++, -			Addition, subtraction
+<<, >> 			Bitwise shifts
+& 				Bitwise AND
+^ 				Bitwise XOR
+| 				Bitwise OR
+in, not in,
+is, is not, 
+<, <=,
+>, >=,
+!=, == 			Comparisons, membership test, identity test
+not x 			Boolean NOT
+and 			Boolean AND
+or 				Boolean OR
+```  
+REFERENCE: [Operator Precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
 
-Error Handling
+## Error Handling
 
 When ever we are running a program, we may face different types of errors. Our programs may stop working because of some errors. To keep continue running the program, we can handle the error with try...except block, like this:
-	try:
-		x = 5 / 0
-	except ValueError:
-		print('I caught a ValueError')
-	except ZeroDivisionError:
-		print("don't divide by zero")
-	except:
-		print('unknown error')
-	else:
-		print('good job')
-		print(x)
-
+```python	
+try:
+  x = 5 / 0
+except ValueError:
+  print('I caught a ValueError')
+except ZeroDivisionError:
+  print("don't divide by zero")
+except:
+  print('unknown error')
+else:
+  print('good job')
+  print(x)
+```
 In the try block, we put in the piece(s) of code that we think may generate an error. This is followed by 'except' block with the type of error we are expecting (except ValueError:) followed by the piece of code that we want to run to handle the error. If we don't know the type of the error, we can use the generic except (except:). If we want to execute a piece of code when there is no error in the execution, we can put that in the 'else' block (else:). To know more about the error, we can import the 'sys' library, like this:
-	import sys
+```python
+import sys
+```
 Then we get some additional information about any error, like: sys.exc_info().
 
-File I/O
+## File I/O
 
 Python can be used to read from and write to files. For this we need to first 'open' the file, like this:
-	f = open('lines.txt')
-This function also takes a second argument, which would be either 'r' for read, 'w' for write, or 'a' for append. There is an optional '+' sign after these letters, which enable both read and write for the file. There is also an optional 't' for text files or 'b' for binary files.
+```python
+f = open('lines.txt')
+```
+This function also takes a second argument, which would be either `r` for read, `w` for write, or `a` for append. There is an optional `+` sign after these letters, which enable both read and write for the file. There is also an optional `t` for text files or `b` for binary files.
 
 The 'open' method will return a iterator file object. So, we can loop over that item to read each of the lines, like this:
-	for line in f:
-		print(line.rstrip())
+```python
+for line in f:
+  print(line.rstrip())
+```
 
-The 'rstrip' method removes any whitespace or line ending characters from the end of the line.
+The `rstrip` method removes any whitespace or line ending characters from the end of the line.
 
 
-To 'write' lines to another file, we first need to create a file object with the output file, like this:
-	outfile = open('lines_copy.txt', 'wt')
+To `write` lines to another file, we first need to create a file object with the output file, like this:
+```python
+outfile = open('lines_copy.txt', 'wt')
+```
 Then, we can simply put a print function inside the for-loop, like this:
-	print(line.rstrip(), file=outfile)
-
-We can also use the 'writelines()' method of the file object to write the lines to the files:
-	outfile.writelines(line)
-
-After reading from or writing to a file, we need to close that file with the "close" method of the file object:
-	outfile.close()
-
+```python
+print(line.rstrip(), file=outfile)
+```
+We can also use the `writelines()` method of the file object to write the lines to the files:
+```python
+outfile.writelines(line)
+```
+After reading from or writing to a file, we need to close that file with the `close` method of the file object:
+```python
+outfile.close()
+```
 While reading the binary files and writing to the binary file we need to read in chunks. like this:
-	buf = infile.read(10240)
+```python
+buf = infile.read(10240)
+```
 Then check if the 'buf' exists. If it does, "write" the 'buf' to the output file:
-	if buf:
-		outfile.write(buf)
+```python
+if buf:
+  outfile.write(buf)
+```
 
